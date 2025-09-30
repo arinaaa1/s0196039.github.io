@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Задание 1 — Список ссылок и форма</title>
+    <meta name="description" content="HTML5 страница с примерами гиперссылок и формой">
+</head>
+<body>
+    <header>
+        <h1>Задание 1</h1>
+    </header>
+
+    <section>
+        <h2>Маркированный список гиперссылок</h2>
+        <ul>
+            <li>
+                1) Абсолютная гиперссылка (http) на главную <code>kubsu.ru</code> —
+                <a href="http://kubsu.ru/" target="_blank">КубГУ</a>
+            </li>
+            <li>
+                2) Абсолютная гиперссылка (https) на главную <code>kubsu.ru</code> —
+                <a href="https://kubsu.ru/" target="_blank">КубГУ</a>
+            </li>
+            <li>
+                3) Ссылка-изображение —
+                <a href="https://kubsu.ru/" target="_blank" title="Перейти на kubsu.ru">
+                    <img src="image.jpg" alt="Цветок" width="150" height="90">
+                </a>
+            </li>
+            <li>
+                4) <a href="/inner.html">Сокращённая (корневая) ссылка на внутреннюю страницу</a>
+            </li>
+            <li>
+                5) Сокращённая ссылка на главную страницу —
+                <a href="/">КубГУ</a>
+            </li>
+            <li>
+                6) Ссылка на фрагмент текущей страницы —
+                <a href="#fragment">к фрагменту</a>
+            </li>
+            <li>
+                7) <a href="/search.html?param1=one&amp;param2=two&amp;param3=three">Ссылка с тремя параметрами в URL</a>
+            </li>
+            <li>
+                8) <a href="/item.html?id=42">Ссылка с параметром id в URL</a>
+            </li>
+            <li>
+                9) Относительная ссылка на страницу в текущем каталоге —
+                <a href="./hello">КубГУ</a>
+            </li>
+            <li>
+                10) <a href="about/about.html">Относительная ссылка на страницу в каталоге about</a>
+            </li>
+            <li>
+                11) <a href="../up.html">Относительная ссылка на страницу уровнем выше</a>
+            </li>
+            <li>
+                12) <a href="../../top.html">Относительная ссылка на страницу двумя уровнями выше</a>
+            </li>
+            <li>
+                13) <a href="https://ru.wikipedia.org/wiki/HTML" target="_blank" title="Статья об HTML в Википедии">Контекстная ссылка в тексте абзаца</a>
+            </li>
+            <li>
+                14) Ссылка на фрагмент страницы стороннего сайта —
+                <a href="https://ru.wikipedia.org/wiki/HTML#История" target="_blank">Статья HTML — фрагмент «История»</a>
+            </li>
+            <li>
+                15) Ссылки из прямоугольных и круглых областей картинки (map)
+                <div class="map-container">
+                    <img src="Круг и квадрат.jpg" alt="Пример image map с кругом и квадратом" width="300" height="180" usemap="#example-map">
+                    <map name="example-map">
+                        <!-- Прямоугольная область: x1,y1,x2,y2 -->
+                        <area shape="rect" coords="10,10,140,80" href="https://kubsu.ru/" alt="KUBSU" target="_blank">
+                        <!-- Круглая область: centerX,centerY,radius -->
+                        <area shape="circle" coords="220,90,40" href="https://ru.wikipedia.org/wiki/CSS" alt="CSS в Википедии" target="_blank">
+                    </map>
+                </div>
+            </li>
+            <li>
+                16) Ссылка с пустым <code>href</code> —
+                <a href="">пустая ссылка</a>
+            </li>
+            <li>
+                17) Ссылка без <code>href</code> —
+                <a>без href</a>
+            </li>
+            <li>
+                18) Ссылка, по которой запрещён переход поисковикам —
+                <a href="https://example.com/paid" rel="nofollow" target="_blank">nofollow ссылка</a>
+            </li>
+            <li>
+                19) Запрещённая для индексации поисковиками —
+                <!-- Yandex поддерживает контейнер noindex для запрета индексации конкретного фрагмента -->
+                <noindex><a href="https://example.com/private" target="_blank">noindex ссылка</a></noindex>
+            </li>
+            <li>
+                20) Нумерованный список ссылок с подписями <code>title</code>:
+                <ol>
+                    <li><a href="https://example.com/a" title="Описание ссылки A" target="_blank">Ссылка A</a></li>
+                    <li><a href="https://example.com/b" title="Описание ссылки B" target="_blank">Ссылка B</a></li>
+                    <li><a href="https://example.com/c" title="Описание ссылки C" target="_blank">Ссылка C</a></li>
+                </ol>
+            </li>
+            <li>
+                21) <a href="ftp://user:password@ftp.example.com/files/report.txt">Ссылка на файл на сервере FTP с авторизацией</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="fragment">
+        <h2>Форма</h2>
+        <form action="#" method="post">
+            <div>
+                <label for="fio">ФИО</label>
+                <input type="text" id="fio" name="fio" placeholder="Иванов Иван Иванович" required>
+            </div>
+
+            <div>
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7........" inputmode="numeric" pattern="[0-9]{10}" minlength="10" maxlength="10" oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)" required>
+            </div>
+
+            <div>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+
+            <div>
+                <label for="dob">Дата рождения</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div>
+                <span style="display:block; margin-bottom:4px; font-weight:600;">Пол</span>
+                <label class="inline"><input type="radio" name="gender" value="male" required> Мужской</label>
+                <label class="inline"><input type="radio" name="gender" value="female"> Женский</label>
+                <label class="inline"><input type="radio" name="gender" value="other"> Другое</label>
+            </div>
+
+            <div>
+                <label for="languages">Любимый язык программирования</label>
+                <select id="languages" name="languages" multiple size="6" required>
+                    <option>Pascal</option>
+                    <option>C</option>
+                    <option>C++</option>
+                    <option>JavaScript</option>
+                    <option>PHP</option>
+                    <option>Python</option>
+                    <option>Java</option>
+                    <option>Haskel</option>
+                    <option>Clojure</option>
+                    <option>Prolog</option>
+                    <option>Scala</option>
+                </select>
+                <div class="note">Удерживайте Ctrl (Windows) или ⌘ (macOS) для выбора нескольких вариантов.</div>
+            </div>
+
+            <div>
+                <label for="bio">Биография</label>
+                <textarea id="bio" name="bio" placeholder="Краткая информация о себе"></textarea>
+            </div>
+
+            <div>
+                <label class="inline"><input type="checkbox" id="agree" name="agree" required> С контрактом ознакомлен(а)</label>
+            </div>
+
+            <div>
+                <button type="submit">Сохранить</button>
+            </div>
+        </form>
+    </section>
+
+
+</body>
+</html>
+
+
